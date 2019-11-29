@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" 
+        integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" 
+        crossorigin="anonymous">
+        <style>
+            .contem{
+                width: 50%;
+                margin-left: 5px;
+            }
+            .texto{
+                text-align: center;
+            }
+        </style>
+        <script>
+            function myFunction() {
+                //teste de nome
+                var v1=1, v2=1, v3=1, v4=1 
+                var user = document.getElementById("field1").value;
+                if(user == ""){
+                    document.getElementById("f1").innerHTML = "Nome não pode estar vazio!";
+                    v1=1;
+                }else{
+                    document.getElementById("f1").innerHTML = "";
+                    v1=0;
+                }
+                //teste de tel
+                var tele = document.getElementById("field2").value;
+                if(tele == ""){
+                    document.getElementById("f2").innerHTML = "Telefone não pode estar vazio!";
+                    v2=1;
+                }else{
+                    document.getElementById("f2").innerHTML = "";
+                    v2=0;
+                }
+                //teste de email
+                var email = document.getElementById("field3").value;
+                if(email == ""){
+                    document.getElementById("f3").innerHTML = "Email não pode estar vazio!";
+                    v3=1;
+                }else{
+                    document.getElementById("f3").innerHTML = "";
+                    v3=0;
+                }
+                //teste de Confirmar Email
+                var cemail = document.getElementById("field4").value;
+                if(email != cemail){
+                    document.getElementById("f4").innerHTML = "Emails diferentes!";
+                    v4=1;
+                }else{
+                    document.getElementById("f4").innerHTML = "";
+                    v4=0;
+                }
+                //testar todos
+                if(v1 == 0 && v2 == 0 && v3 == 0 && v4 == 0 ){
+                    alert("Seja bem vindo, " + user +"!");
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="contem">
+            <h1 class="texto">Para receber as novidades mais recentes da nossa hamburguéria, preencha o formulário abaixo e
+                seja o primeiro a ser informado.</h1>
+            <form method="post" action="teste.php" >
+                
+                    <label>Nome: </label>
+                        <input type="text" class="form-control" id="field1"  placeholder="Nome" name="nome"/>
+                        <p id="f1"></p>
+                    
+                    
+                        <label>Telefone: </label>
+                        <input type="text" id="field2" class="form-control" placeholder="(83)1234-5678" name="telefone"/>
+                        <p id="f2"></p>
+                    
+                    
+                        <label>Email: </label>
+                        <input type="text" id="field3" class="form-control" placeholder="user@domain.com" name="email" />
+                        <p id="f3"></p>
+                    
+                        <label>Confirmar Email: </label>
+                        <input type="text" class="form-control" id="field4" />
+                        <p id="f4"></p>
+                    
+                        <button class="btn btn-primary" type="submit" onclick="return myFunction()">Enviar</button>
+                        <button type="button" onclick="location.href='pc.php';" class="btn btn-warning">Painel de controle</button>
+            </form>
+        </div>
+    </body>
+</html>
